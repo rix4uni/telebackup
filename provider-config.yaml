@@ -1,0 +1,17 @@
+## Get api_id and api_hash from https://my.telegram.org/auth
+api_id: []
+api_hash: []
+
+## Save telegram session
+session_name:
+  - telegram
+
+## Where you want to scrape
+source_channel: []
+
+## Where you want to save scrape data
+destination_channel: []
+
+## Where you want to save id's to avoid duplidate scrape
+sent_ids_file:
+  - sent_ids.txt
