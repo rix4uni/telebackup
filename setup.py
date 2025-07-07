@@ -18,7 +18,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'telebackup=telebackup.telebackup:main',  # Adjust the import path for main
+            'telebackup=telebackup.telebackup:run',  # Adjust the import path for run
         ],
     },
 

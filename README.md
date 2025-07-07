@@ -14,3 +14,8 @@ Quick setup in isolated python environment using [pipx](https://pypa.github.io/p
 ```
 pipx install --force git+https://github.com/rix4uni/telebackup.git
 ```
+
+## Usage
+```
+telebackup
+```

@@ -108,5 +108,8 @@ async def main():
                     print(f"⚠️ Error copying {msg_url}: {e}")
 
 # 🧠 Start the Script
-if __name__ == "__main__":
+def run():
     asyncio.run(main())
+
+if __name__ == "__main__":
+    run()
