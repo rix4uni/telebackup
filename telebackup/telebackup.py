@@ -4,6 +4,7 @@ import asyncio
 from telethon.sync import TelegramClient
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.tl.types import MessageMediaWebPage
+from telethon.errors import MediaCaptionTooLongError, FloodWaitError
 
 # 📁 Define Config Directory & File
 CONFIG_DIR = os.path.expanduser("~/.config/telebackup")
@@ -103,6 +104,14 @@ async def main():
 
                     save_sent_id(sent_ids_file, msg_url)
                     print(f"✅ Copied: {msg_url}")
+
+                except MediaCaptionTooLongError:
+                    print(f"⚠️ Caption too long for message: {msg_url}, skipping.")
+                    continue  # Skip this message and continue
+
+                except FloodWaitError as e:
+                    print(f"🕒 FloodWaitError: Sleeping for {e.seconds} seconds...")
+                    await asyncio.sleep(e.seconds)
 
                 except Exception as e:
                     print(f"⚠️ Error copying {msg_url}: {e}")
